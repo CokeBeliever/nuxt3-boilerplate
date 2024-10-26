@@ -1,3 +1,109 @@
 {
-  "extends": ["@commitlint/config-conventional"]
+  "extends": ["@commitlint/config-conventional"],
+  "rules": {
+    "scope-enum": [2, "always"]
+  },
+  "prompt": {
+    "settings": {
+      "enableMultipleScopes": false,
+      "scopeEnumSeparator": ","
+    },
+    "messages": {
+      "skip": ":按回车键跳过",
+      "max": "最多 %d 个字符",
+      "min": "最少 %d 个字符",
+      "emptyWarning": "不能为空",
+      "upperLimitWarning": "高于限制",
+      "lowerLimitWarning": "低于限制"
+    },
+    "questions": {
+      "type": {
+        "description": "选择您正在提交的更改类型：",
+        "enum": {
+          "feat": {
+            "description": "一个新功能",
+            "title": "功能",
+            "emoji": "✨"
+          },
+          "fix": {
+            "description": "一个 bug 修复",
+            "title": "Bug 修复",
+            "emoji": "🐛"
+          },
+          "docs": {
+            "description": "仅修改文档",
+            "title": "文档",
+            "emoji": "📚"
+          },
+          "style": {
+            "description": "不影响代码含义的更改（空格、格式、缺少分号等）",
+            "title": "样式",
+            "emoji": "💎"
+          },
+          "refactor": {
+            "description": "既不修复 bug 也不添加功能的代码更改",
+            "title": "代码重构",
+            "emoji": "📦"
+          },
+          "perf": {
+            "description": "提高性能的代码更改",
+            "title": "性能改进",
+            "emoji": "🚀"
+          },
+          "test": {
+            "description": "添加缺失的测试或更正现有的测试",
+            "title": "测试",
+            "emoji": "🚨"
+          },
+          "build": {
+            "description": "影响构建系统或外部依赖关系的更改（例如：gulp、broccoli、npm）",
+            "title": "构建",
+            "emoji": "🛠"
+          },
+          "ci": {
+            "description": "更改我们的 CI 配置文件和脚本（例如：Travis、Circle、BrowserStack、SauceLabs）",
+            "title": "持续集成",
+            "emoji": "⚙️"
+          },
+          "chore": {
+            "description": "其他不修改 src 或测试文件的更改",
+            "title": "日常事务",
+            "emoji": "♻️"
+          },
+          "revert": {
+            "description": "还原以前的提交",
+            "title": "还原",
+            "emoji": "🗑"
+          }
+        }
+      },
+      "scope": {
+        "description": "此更改的作用域是什么（例如：client 或 server）"
+      },
+      "subject": {
+        "description": "写一个简短的祈使时态描述变化"
+      },
+      "body": {
+        "description": "提供更改的详细说明"
+      },
+      "isBreaking": {
+        "description": "有什么突破性的变化吗？"
+      },
+      "breakingBody": {
+        "description": "BREAKING CHANGE commit 需要一个主体。请输入 commit 本身的较长描述"
+      },
+      "breaking": {
+        "description": "描述突破性的变化"
+      },
+      "isIssueAffected": {
+        "description": "此更改是否会影响任何未解决的问题？"
+      },
+      "issuesBody": {
+        "description": "如果问题已解决，则提交需要一个主体。请输入提交本身的较长描述"
+      },
+      "issues": {
+        "description": "添加问题涉及（例如：\"fix #123\"、\"re #123\"。）"
+      }
+    }
+  }
 }
